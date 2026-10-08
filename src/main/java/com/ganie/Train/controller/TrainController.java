@@ -1,5 +1,7 @@
 package com.ganie.Train.controller;
 
+import com.ganie.Train.dto.TrainRequestDTO;
+import com.ganie.Train.dto.TrainResponseDTO;
 import com.ganie.Train.entity.Train;
 import com.ganie.Train.entity.TrainSchedule;
 import com.ganie.Train.service.TrainService;
@@ -26,16 +28,9 @@ public class TrainController {
     }
 
     @PostMapping
-    public Train addTrain(@RequestBody Train train)
+    public TrainResponseDTO addTrain(@RequestBody TrainRequestDTO dto)
     {
-         return trainService.addTrain(train);
+         return trainService.addTrain(dto);
     }
-
-    @GetMapping("/Test")
-    public void test()
-    {
-
-    }
-
 
 }
